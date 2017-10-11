@@ -1,18 +1,18 @@
 package ru.spbau.gbarto;
 
 public class LinkedList {
-    public Node head;
-    public Node tail;
+    private Node head;
+    private Node tail;
 
     /**
-     * Class for storing the keys and values
+     * Class for storing the keys and values.
      */
-    public class Pair {
-        private String key;
-        private String value;
+    static public class Pair {
+        private final String key;
+        private final String value;
 
         /**
-         * Constructor by key and value
+         * Constructor by key and value.
          *
          * @param key
          * @param value
@@ -23,7 +23,7 @@ public class LinkedList {
         }
 
         /**
-         * Get a pair key
+         * Get a pair key.
          *
          * @return key
          */
@@ -32,7 +32,7 @@ public class LinkedList {
         }
 
         /**
-         * Get a pair value
+         * Get a pair value.
          *
          * @return value
          */
@@ -42,14 +42,14 @@ public class LinkedList {
     }
 
     /**
-     * A Node is an element of which the list consists
+     * A Node is an element of which the list consists.
      */
-    public class Node {
+    private static class Node {
         private Node next;
         private Pair data;
 
         /**
-         * Constructor by data
+         * Constructor by data.
          *
          * @param data
          */
@@ -58,7 +58,7 @@ public class LinkedList {
         }
 
         /**
-         * Get next Node in the list
+         * Get next Node in the list.
          *
          * @return next
          */
@@ -67,16 +67,16 @@ public class LinkedList {
         }
 
         /**
-         * Set the value of the next to n
+         * Set the value of the next to n.
          *
-         * @param n
+         * @param n next Node
          */
         public void setNext(Node n) {
             next = n;
         }
 
         /**
-         * Get the data stored in the Node
+         * Get the data stored in the Node.
          *
          * @return data
          */
@@ -86,7 +86,7 @@ public class LinkedList {
     }
 
     /**
-     * Get Head of the list
+     * Get Head of the list.
      *
      * @return head
      */
@@ -95,7 +95,7 @@ public class LinkedList {
     }
 
     /**
-     * Check if list contains Node with such key
+     * Check if list contains Node with such key.
      *
      * @param key A String
      * @return boolean (contains or not)
@@ -110,7 +110,7 @@ public class LinkedList {
     }
 
     /**
-     * Gets the value by key
+     * Gets the value by key.
      *
      * @param key A String
      * @return value which corresponds to such key
@@ -125,7 +125,7 @@ public class LinkedList {
     }
 
     /**
-     * Adds a new pair of key and value at the end of the list
+     * Adds a new pair of key and value at the end of the list.
      *
      * @param key   A String
      * @param value A String
@@ -143,7 +143,7 @@ public class LinkedList {
     }
 
     /**
-     * Removes a Node by key
+     * Removes a Node by key.
      *
      * @param key A String
      */
@@ -172,7 +172,7 @@ public class LinkedList {
     }
 
     /**
-     * Makes the list empty
+     * Makes the list empty.
      */
     public void clear() {
         head = null;

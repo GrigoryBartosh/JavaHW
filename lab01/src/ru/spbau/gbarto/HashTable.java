@@ -1,7 +1,8 @@
 package ru.spbau.gbarto;
 
 /**
- * Implemented on a single-linked list
+ * HashTable allows you to store pairs Key and Value.
+ * Implemented on a single-linked list.
  */
 public class HashTable {
     private static final int INIT_CAPACITY = 2;
@@ -13,7 +14,7 @@ public class HashTable {
     private int capacity;
 
     /**
-     * Initialization of the HashTable
+     * Initialization of the HashTable.
      */
     public HashTable() {
         table = new LinkedList[INIT_CAPACITY];
@@ -22,7 +23,7 @@ public class HashTable {
     }
 
     /**
-     * Gets hash by string
+     * Gets hash by string.
      *
      * @param s A String
      * @return Integer hash
@@ -38,7 +39,7 @@ public class HashTable {
     }
 
     /**
-     * Reconfigures the table, doubling the number of cells
+     * Reconfigures the table, doubling the number of cells.
      */
     private void rebuild() {
         capacity *= 2;
@@ -64,7 +65,7 @@ public class HashTable {
     }
 
     /**
-     * Returns size
+     * Returns size.
      *
      * @return Count of pairs in HashTable
      */
@@ -73,7 +74,7 @@ public class HashTable {
     }
 
     /**
-     * Check if HashTable contains Pair with such key
+     * Check if HashTable contains Pair with such key.
      *
      * @param key A String
      * @return boolean (contains or not)
@@ -84,7 +85,7 @@ public class HashTable {
     }
 
     /**
-     * Gets the value by key
+     * Gets the value by key.
      *
      * @param key A String
      * @return value which corresponds to such key
@@ -99,10 +100,10 @@ public class HashTable {
     }
 
     /**
-     * Adds a new pair of key and value at the HashTable
+     * Adds a new pair of key and value at the HashTable.
      *
-     * @param key   A String
-     * @param value A String
+     * @param key   A Key String
+     * @param value A Value String
      */
     public void put(String key, String value) {
         int hash = getHash(key);
@@ -119,11 +120,13 @@ public class HashTable {
         }
         list.add(key, value);
 
-        if (size * BALANCE_K > capacity) rebuild();
+        if (size * BALANCE_K > capacity) {
+            rebuild();
+        }
     }
 
     /**
-     * Removes a Pair by key
+     * Removes a Pair by key.
      *
      * @param key A String
      */
@@ -141,7 +144,7 @@ public class HashTable {
     }
 
     /**
-     * Makes HashTable empty
+     * Makes HashTable empty.
      */
     public void clear() {
         for (LinkedList list : table) {
