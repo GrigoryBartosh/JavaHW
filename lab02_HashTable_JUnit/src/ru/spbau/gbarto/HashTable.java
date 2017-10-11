@@ -1,7 +1,8 @@
 package ru.spbau.gbarto;
 
 /**
- * Implemented on a single-linked list
+ * HashTable allows you to store pairs Key and Value.
+ * Implemented on a single-linked list.
  */
 public class HashTable {
     private static final int INIT_CAPACITY = 2;
@@ -101,8 +102,8 @@ public class HashTable {
     /**
      * Adds a new pair of key and value at the HashTable.
      *
-     * @param key   A String
-     * @param value A String
+     * @param key   A Key String
+     * @param value A Value String
      */
     public void put(String key, String value) {
         int hash = getHash(key);
@@ -119,7 +120,9 @@ public class HashTable {
         }
         list.add(key, value);
 
-        if (size * BALANCE_K > capacity) rebuild();
+        if (size * BALANCE_K > capacity) {
+            rebuild();
+        }
     }
 
     /**

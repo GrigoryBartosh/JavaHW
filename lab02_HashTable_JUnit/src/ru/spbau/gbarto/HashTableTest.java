@@ -32,9 +32,9 @@ public class HashTableTest {
         table.put("a", "b");
         table.put("b", "c");
         table.put("c", "d");
-        assertEquals(true, table.contains("a"));
-        assertEquals(true, table.contains("c"));
-        assertEquals(false, table.contains("z"));
+        assertTrue(table.contains("a"));
+        assertTrue(table.contains("c"));
+        assertFalse(table.contains("z"));
     }
 
     /**
@@ -81,9 +81,9 @@ public class HashTableTest {
         table.put("c", "d");
         table.remove("a");
         table.remove("z");
-        assertEquals(false, table.contains("a"));
-        assertEquals(true, table.contains("b"));
-        assertEquals(true, table.contains("c"));
+        assertFalse(table.contains("a"));
+        assertTrue(table.contains("b"));
+        assertTrue(table.contains("c"));
     }
 
     /**

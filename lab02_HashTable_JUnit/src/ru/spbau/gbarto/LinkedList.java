@@ -1,15 +1,15 @@
 package ru.spbau.gbarto;
 
 public class LinkedList {
-    public Node head;
-    public Node tail;
+    private Node head;
+    private Node tail;
 
     /**
      * Class for storing the keys and values.
      */
-    public class Pair {
-        private String key;
-        private String value;
+    static public class Pair {
+        private final String key;
+        private final String value;
 
         /**
          * Constructor by key and value.
@@ -44,7 +44,7 @@ public class LinkedList {
     /**
      * A Node is an element of which the list consists.
      */
-    public class Node {
+    private static class Node {
         private Node next;
         private Pair data;
 
@@ -69,7 +69,7 @@ public class LinkedList {
         /**
          * Set the value of the next to n.
          *
-         * @param n
+         * @param n next Node
          */
         public void setNext(Node n) {
             next = n;
