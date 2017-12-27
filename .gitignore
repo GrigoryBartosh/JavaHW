@@ -1,0 +1,17 @@
+*~
+*.class
+*.log
+workspace.xml
+tasks.xml
+.gradle
+build/
+gradlew.bat
+**/.idea/libraries/
+*.ctxt
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
