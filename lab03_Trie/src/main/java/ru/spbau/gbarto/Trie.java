@@ -114,7 +114,7 @@ public class Trie implements Serializable {
      *  Writes a Trie into the output stream.
      *
      * @param out an output stream to write into
-     * @throws IOException
+     * @throws IOException if couldn't write to the given output stream
      */
     public void serialize(OutputStream out) throws IOException {
         ObjectOutputStream os = new ObjectOutputStream(out);
@@ -126,8 +126,8 @@ public class Trie implements Serializable {
      * Reads a Trie from the input stream.
      *
      * @param in an input stream to read from
-     * @throws IOException
-     * @throws ClassNotFoundException
+     * @throws IOException if couldn't read to the given output stream
+     * @throws ClassNotFoundException if tries to read something which is not a Trie
      */
     public void deserialize(InputStream in) throws IOException, ClassNotFoundException {
         ObjectInputStream is = new ObjectInputStream(in);
