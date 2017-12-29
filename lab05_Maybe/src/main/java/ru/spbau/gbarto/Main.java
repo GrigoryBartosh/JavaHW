@@ -10,8 +10,8 @@ import java.io.PrintWriter;
  * Reads int values from file and writes squares into the other file.
  */
 public class Main {
-    private static final String FILE_IN = "src/main/resources/in.txt";
-    private static final String FILE_OUT = "src/main/resources/out.txt";
+    protected static final String FILE_IN = "src/main/resources/in.txt";
+    protected static final String FILE_OUT = "src/main/resources/out.txt";
 
     public static void main(String[] args) throws MaybeException {
         try (BufferedReader in  = new BufferedReader(new FileReader(FILE_IN));

@@ -11,7 +11,7 @@ import java.util.function.Function;
  */
 public class Maybe<T> {
     private T val;
-    private static Maybe maybeNothing = null;
+    private static Maybe maybeNothing = new Maybe(null);
 
     private Maybe(T object) {
         val = object;
@@ -35,10 +35,7 @@ public class Maybe<T> {
      * @return a new Maybe object.
      */
     public static <U> Maybe<U> nothing() {
-        if (maybeNothing == null) {
-            maybeNothing = new Maybe(null);
-        }
-        return (Maybe<U>) maybeNothing;
+        return maybeNothing;
     }
 
     /**
