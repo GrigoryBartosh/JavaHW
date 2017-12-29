@@ -71,8 +71,6 @@ public class Unzipper {
 
         try (FileSystem fileSystem = FileSystems.newFileSystem(file.toPath(), null)) {
             Files.copy(fileSystem.getPath(entry.getName()), outputFile.toPath());
-        } catch (IOException e) {
-            throw e;
         }
     }
 

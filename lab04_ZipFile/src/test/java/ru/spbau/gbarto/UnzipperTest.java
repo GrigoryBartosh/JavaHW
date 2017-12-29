@@ -15,8 +15,6 @@ import static junit.framework.TestCase.assertEquals;
 public class UnzipperTest {
     /**
      * Checks the correctness of unpacking of three files.
-     *
-     * @throws IOException
      */
     @Test
     public void unzip() throws IOException {
