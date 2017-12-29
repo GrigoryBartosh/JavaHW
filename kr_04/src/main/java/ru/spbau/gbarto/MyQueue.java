@@ -2,7 +2,6 @@ package ru.spbau.gbarto;
 
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.TreeSet;
 
 /**
  * My realization of PriorityQueue.
@@ -10,7 +9,7 @@ import java.util.TreeSet;
  * @param <E> given type of elements
  */
 public class MyQueue<E> implements MyPriorityQueue<E>{
-    private TreeSet<Node<E>> data;
+    private MyTreeSet<Node<E>> data;
 
     /**
      * Class Node storing the given elements and its parameters.
@@ -56,7 +55,7 @@ public class MyQueue<E> implements MyPriorityQueue<E>{
      * The natural order is used.
      */
     public MyQueue() {
-        data = new TreeSet<>((a, b) -> {
+        data = new MyTreeSet<>((a, b) -> {
             int cmp = ((Comparable<? super E>)a.element).compareTo(b.element);
             if (cmp != 0) {
                 return cmp;
@@ -73,7 +72,7 @@ public class MyQueue<E> implements MyPriorityQueue<E>{
      * @param comparator of elements
      */
     public MyQueue(Comparator<? super E> comparator) {
-        data = new TreeSet<>((a, b) -> {
+        data = new MyTreeSet<>((a, b) -> {
             int cmp = comparator.compare(a.element, b.element);
             if (cmp != 0) {
                 return cmp;
